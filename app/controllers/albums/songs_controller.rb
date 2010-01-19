@@ -1,4 +1,5 @@
 class Albums::SongsController < InheritedResources::Base
-  defaults :routes_prefix => nil
-  respond_to :html, :xml, :json  
+  defaults :route_prefix => nil
+  belongs_to :album
+  respond_to :html, :xml, :json 
 end
