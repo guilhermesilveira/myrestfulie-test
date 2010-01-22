@@ -1,11 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
 
+  # map.connect '/songs', :controller => 'songs', :action => 'index', :format => :xml
+
+
   map.resources :albums do |album|
-    album.resources :songs, :controller => 'albums/songs'
+    album.resources :songs, :controller => 'albums/songs', :format => :xml
   end
   
-  map.resources :songs
-
+  map.resources :songs, :format => :xml
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

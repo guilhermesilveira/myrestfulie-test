@@ -24,6 +24,7 @@ Rails::Initializer.run do |config|
   config.gem "inherited_resources"
   # config.gem "simple_form"
   config.gem "show_for"
+  config.gem "ratom", :lib => "atom"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

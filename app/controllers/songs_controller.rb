@@ -1,11 +1,15 @@
 class SongsController < InheritedResources::Base
-  include Restfulie::Server::Controller
-  respond_to :html, :xml, :json
-  
+# class SongsController < ApplicationController
+  # include Restfulie::Server::Controller
+  # respond_to :atom
+  actions :index, :show
+    
   def show
-    @song = Song.find(params[:id])
-    render_resource @song
-  end
-  
-  
+      @song = Song.find(params[:id])
+      # render_resource @song
+      
+      respond_to do |format|
+        format.xml { render :xml => @song.to_atom.to_xml }
+      end
+    end
 end
